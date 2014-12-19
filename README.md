@@ -5,7 +5,7 @@ A light-weight framework of spider implemented in node.js.
 
 ## example
 ```javascript
-var spider = require('spiderer');
+var Spider = require('spiderer');
 
 function filter(err, res, $) {
 	console.log($('title').html());
@@ -23,7 +23,8 @@ var config = {
 	filter: filter;
 }
 
-spider.start(config);
+var spider = new Spider(config);
+spider.start();
 ```
 
 ## configuration

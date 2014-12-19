@@ -39,10 +39,7 @@ function fetch(url) {
 	});
 }
 
-exports.start = function() {
-	if (arguments.length != 0) {
-		exports.config(arguments[0]);
-	}
+function start() {
 	taskQueue = taskQueue.concat(config.startURLs);
 	var intervalID = setInterval(function() {
 		if (taskQueue.length != 0) {
@@ -60,19 +57,25 @@ exports.start = function() {
 }
 
 
-exports.config = function(options) {
-	if (options.startURLs == null) {
+function initialize(options) {
+	if (!options.startURLs) {
 		console.err('At least one URL must be specified!');
 		return -1;
 	}
+	if (!options.filter) {
+		console.error('Filter must be specified!');
+		return -1;
+	}
+	config.filter = options.filter;
 	config.domains = options.domains || [];
 	config.startURLs = options.startURLs;
-	config.filter = options.filter || fetchAllURLs;
 	config.interval = options.interval || 2 * 1000;
 	config.workerNum = options.workerNum || 4;
 	config.silent = options.silent || false;
 }
 
-function fetchAllURLs(err, res, $) {
-	return $('a');
+module.exports = function(options) {
+	this.start = start;
+	this.config = config;
+	initialize(options);
 }

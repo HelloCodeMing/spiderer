@@ -1,4 +1,4 @@
-var spider = require('../src/index');
+var Spider = require('../src/index');
 
 /**
  * @description: filter the html as a callback.
@@ -21,4 +21,5 @@ var config = {
 	interval: 2* 1000
 };
 
-spider.start(config);
+var spider = new Spider(config);
+spider.start();

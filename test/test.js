@@ -1,4 +1,4 @@
-var Spider = require('../src/index');
+var Spider = require('../lib/index');
 
 /**
  * @description: filter the html as a callback.

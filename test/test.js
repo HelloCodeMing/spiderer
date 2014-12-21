@@ -5,12 +5,11 @@ var Spider = require('../lib/index');
  */
 function filter(err, res, $) {
 	console.log($('title').html());
-	var res = $('[href]');
+	var res = $('a[href]');
 	if (res.map != undefined) {
 		return res.map(function() {
 			return $(this).attr('href');
 		});
-
 	}
 }
 
@@ -23,4 +22,7 @@ var config = {
 };
 
 var spider = new Spider(config);
-spider.start();
+spider.start(function() {
+	console.log('the spider has been stopped.')
+	process.exit();
+});

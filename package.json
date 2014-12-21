@@ -1,22 +1,29 @@
 {
-  "name": "spiderer",
-  "version": "0.0.2",
-  "description": "A light-weight framework of spider implemented in node.js.",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "node test/test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/HelloCodeMing/spiderer"
-  },
-  "keywords": [
-    "spider"
-  ],
-  "author": "huanming wong",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HelloCodeMing/spiderer/issues"
-  },
-  "homepage": "https://github.com/HelloCodeMing/spiderer"
+	"name": "spiderer",
+	"version": "0.0.4",
+	"description": "A light-weight framework of spider implemented in node.js.",
+	"main": "lib/index.js",
+	"scripts": {
+		"test": "node test/test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/HelloCodeMing/spiderer"
+	},
+	"dependencies": {
+		"request": "*",
+		"colors": "*",
+		"oftype": "*",
+		"cheerio": "*",
+		"log4js": "*"
+	},
+	"keywords": [
+		"spider"
+	],
+	"author": "huanming wong",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/HelloCodeMing/spiderer/issues"
+	},
+	"homepage": "https://github.com/HelloCodeMing/spiderer"
 }

@@ -14,8 +14,8 @@ function filter(err, res, $) {
 }
 
 var config = {
-	domains: ['wanghuanming.com'],
-	startURLs: ['http://wanghuanming.com'],
+	domains: ['www.ruanyifeng.com'],
+	startURLs: ['http://www.ruanyifeng.com'],
 	filter: filter,
 	interval: 2* 1000,
 	log: true

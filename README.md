@@ -3,6 +3,8 @@ spiderer
 ## description
 A light-weight framework of spider implemented in node.js.
 
+You could crawl many pages at the same time, to make full use of the network IO. But you have to be careful with the minimum interval, if too small, your IP address may be blocked.
+
 ## example
 ```javascript
 var Spider = require('spiderer');
@@ -31,10 +33,8 @@ spider.start();
 - filter
 	You need to specified a filter, which receive a $ (jquery) and response, return a selector from $. If not provided, spider will crawl all URLs in html. This is the most import function, which should do some valuable jobs.
 - startURLs
-	spider will start from there URLs.
+	spider will start from these URLs.
 - interval
 	spider working interval. Default to be 2 * 1000.
-- workerNum
-	Num of spiders. Default to be 4.
 - log	
 	Log or not, if true, log infos will be stored in log/file.

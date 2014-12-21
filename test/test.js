@@ -18,7 +18,8 @@ var config = {
 	domains: ['wanghuanming.com'],
 	startURLs: ['http://wanghuanming.com'],
 	filter: filter,
-	interval: 2* 1000
+	interval: 2* 1000,
+	log: true
 };
 
 var spider = new Spider(config);

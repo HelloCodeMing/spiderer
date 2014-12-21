@@ -19,8 +19,9 @@ function filter(err, res, $) {
 var config = {
 	domains: ['wanghuanming.com'],
 	startURLs: ['http://wanghuanming.com'],
-	interval: 4 * 1000
-	filter: filter;
+	interval: 4 * 1000,
+	filter: filter,
+	log: true
 }
 
 var spider = new Spider(config);
@@ -38,5 +39,5 @@ spider.start();
 	spider working interval. Default to be 2 * 1000.
 - workerNum
 	Num of spiders. Default to be 4.
-- slient
-	Working in silenc of not, default to be noisy.
+- log	
+	Log or not, if true, log infos will be stored in log/file.

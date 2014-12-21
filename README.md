@@ -8,7 +8,7 @@ A light-weight framework of spider implemented in node.js.
 var Spider = require('spiderer');
 
 function filter(err, res, $) {
-	console.log($('title').html());
+	console.log($('title').text());
 	var res = $('[href]');
 	if (res.map) {
 		return res.map(function() {
@@ -17,7 +17,6 @@ function filter(err, res, $) {
 	}
 }
 var config = {
-	domains: ['wanghuanming.com'],
 	startURLs: ['http://wanghuanming.com'],
 	interval: 4 * 1000,
 	filter: filter,
@@ -31,8 +30,6 @@ spider.start();
 ## configuration
 - filter
 	You need to specified a filter, which receive a $ (jquery) and response, return a selector from $. If not provided, spider will crawl all URLs in html. This is the most import function, which should do some valuable jobs.
-- domains
-	Domains those be allowed.
 - startURLs
 	spider will start from there URLs.
 - interval

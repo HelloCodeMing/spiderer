@@ -4,7 +4,7 @@ var Spider = require('../lib/index');
  * @description: filter the html as a callback.
  */
 function filter(err, res, $) {
-	console.log($('title').html());
+	console.log($('title').text());
 	var res = $('a[href]');
 	if (res.map != undefined) {
 		return res.map(function() {
@@ -14,10 +14,9 @@ function filter(err, res, $) {
 }
 
 var config = {
-	domains: ['www.ruanyifeng.com'],
-	startURLs: ['http://www.ruanyifeng.com'],
+	startURLs: ['http://andrewliu.tk/', 'http://wanghuanming.com'],
 	filter: filter,
-	interval: 2* 1000,
+	interval: 4 * 1000,
 	log: true
 };
 

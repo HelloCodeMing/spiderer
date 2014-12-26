@@ -38,3 +38,5 @@ spider.start();
 	spider working interval. Default to be 2 * 1000.
 - log	
 	Log or not, if true, log infos will be stored in log/file.
+- timeout
+	request timeout.

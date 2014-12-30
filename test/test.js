@@ -3,8 +3,9 @@ var Spider = require('../lib/index');
 /**
  * @description: filter the html as a callback.
  */
-function filter(err, res, $) {
+function filter(err, response, $) {
 	console.log($('title').text());
+    console.log(typeof response.body);
 	var res = $('a[href]');
 	if (res.map != undefined) {
 		return res.map(function() {
@@ -14,9 +15,9 @@ function filter(err, res, $) {
 }
 
 var config = {
-	startURLs: ['http://andrewliu.tk/', 'http://wanghuanming.com'],
+    startURLs: ['https://byvoid.com'],
 	filter: filter,
-	interval: 4 * 1000,
+	interval: 2 * 1000,
 	log: true
 };
 

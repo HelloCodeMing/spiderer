@@ -1,6 +1,6 @@
 {
 	"name": "spiderer",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "A light-weight framework of spider implemented in node.js.",
 	"main": "lib/index.js",
 	"scripts": {

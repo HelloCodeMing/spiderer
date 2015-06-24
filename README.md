@@ -11,9 +11,9 @@ var Spider = require('spiderer');
 
 function filter(err, res, $) {
 	console.log($('title').text());
-	var res = $('a[href]');
-	if (res.map) {
-		return res.map(function() {
+	var links = $('a[href]');
+	if (links) {
+		return links.map(function() {
 			return $(this).attr('href');
 		});
 	}

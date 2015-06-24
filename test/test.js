@@ -5,9 +5,9 @@ var Spider = require('../lib/index');
  */
 function filter(err, response, $) {
 	console.log($('title').text());
-	var res = $('a[href]');
-	if (res.map !== undefined) {
-		return res.map(function() {
+	var links = $('a[href]');
+	if (links.map !== undefined) {
+		return links.map(function() {
 			return $(this).attr('href');
 		});
 	}

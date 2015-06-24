@@ -5,9 +5,8 @@ var Spider = require('../lib/index');
  */
 function filter(err, response, $) {
 	console.log($('title').text());
-    console.log(typeof response.body);
 	var res = $('a[href]');
-	if (res.map != undefined) {
+	if (res.map !== undefined) {
 		return res.map(function() {
 			return $(this).attr('href');
 		});
@@ -15,14 +14,14 @@ function filter(err, response, $) {
 }
 
 var config = {
-    startURLs: ['https://byvoid.com'],
+    startURLs: ['http://wanghuanming.com'],
 	filter: filter,
 	interval: 2 * 1000,
-	log: true
+	log: 'logs/spider.log'
 };
 
 var spider = new Spider(config);
 spider.start(function() {
-	console.log('the spider has been stopped.')
+	console.log('the spider stopped.');
 	process.exit();
 });

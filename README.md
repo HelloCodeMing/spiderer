@@ -11,10 +11,10 @@ var Spider = require('spiderer');
 
 function filter(err, res, $) {
 	console.log($('title').text());
-	var res = $('[href]');
+	var res = $('a[href]');
 	if (res.map) {
 		return res.map(function() {
-				return $(this).attr('href');
+			return $(this).attr('href');
 		});
 	}
 }
@@ -22,7 +22,7 @@ var config = {
 	startURLs: ['http://wanghuanming.com'],
 	interval: 4 * 1000,
 	filter: filter,
-	log: true
+	logfile: 'logs/spider.log'
 }
 
 var spider = new Spider(config);
